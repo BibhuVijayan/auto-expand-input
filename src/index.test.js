@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import AutoExpandInput from '.'
 
-describe('ExampleComponent', () => {
+describe('AutoExpandInput', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(AutoExpandInput).toBeTruthy()
   })
 })

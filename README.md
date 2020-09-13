@@ -1,30 +1,48 @@
-# auto-expand-input
+<h1>Auto-Expand-Input 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-> An input that will automatically expand the height based on the content
+> <h1 align=&#34;center&#34;>An input that will automatically expand the height based on the content 👋</h1>
 
-[![NPM](https://img.shields.io/npm/v/auto-expand-input.svg)](https://www.npmjs.com/package/auto-expand-input) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+### 🏠 [Homepage](https://github.com/BibhuVijayan/bibhuav/blob/master/README.md)
 
 ## Install
 
-```bash
-npm install --save auto-expand-input
+```sh
+npm install auto-expand-input --save
 ```
 
 ## Usage
 
-```jsx
-import React, { Component } from 'react'
+Auto-Expand-Input generates an input field, wrapped in a `<div>` tag, It will automatically expand the height of the input based the content. It will accept all the native input props along withe the specific props to this input. This input will also support floating label and effects similar to material-ui input.
 
-import MyComponent from 'auto-expand-input'
-import 'auto-expand-input/dist/index.css'
+```es6
+import AutoExpandInput from "auto-expand-input";
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+<AutoExpandInput
+  classes={{rootClass: "", inputClass: ""}}
+  label=""
+  inputProps={{
+    onChange,
+    value,
+    ...
+    // it will accept all the native input props here.
+  }}
+></AutoExpandInput>;
 ```
 
-## License
+## Author
 
-MIT © [BibhuVijayan](https://github.com/BibhuVijayan)
+👤 **BibhuVijayan**
+
+- Github: [@BibhuVijayan](https://github.com/BibhuVijayan)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+---
