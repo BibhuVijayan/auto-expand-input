@@ -7,13 +7,26 @@ export const Wrapper = styled.div`
   }
   :hover {
     fieldset {
-      border-color: grey;
+      border-color: #000;
     }
   }
-
   textarea:focus + fieldset {
     border-width: 2px;
     border-color: blue;
+  }
+  textarea:focus ~ .label {
+    font-size: 10px;
+    top: 0;
+    background: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  textarea:not(:empty) ~ .label {
+    font-size: 10px;
+    top: 0;
+    background: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 `
 
@@ -22,13 +35,13 @@ export const TextInput = styled.textarea`
   padding: 10px 10px;
   width: 100%;
   box-sizing: border-box;
-  min-height: 90px;
   border-width: 0;
   outline: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
   -webkit-appearance: none;
+  ${(props) => props.autoSize && 'overflow:hidden'}
   &:focus {
     outline: none;
   }
@@ -68,6 +81,10 @@ export const Label = styled.span`
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 `
 
 export const FieldSet = styled.fieldset`
@@ -75,12 +92,12 @@ export const FieldSet = styled.fieldset`
   margin: 0;
   top: 0;
   left: 0;
-  bottom: 6px;
+  bottom: 0;
   right: 0;
   cursor: text;
   pointer-events: none;
   border: 1px solid grey;
-  border-color: red;
+  border-color: grey;
   &:hover {
     border-color: grey;
   }

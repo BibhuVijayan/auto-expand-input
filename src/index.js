@@ -2,7 +2,14 @@ import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { Wrapper, TextInput, FieldSet, Label } from './styled'
 
-const AutoExpandInput = ({ inputProps, autoSize, label, errorField }) => {
+const AutoExpandInput = ({
+  inputProps = {},
+  autoSize,
+  label,
+  errorField,
+  value,
+  classes = {}
+}) => {
   const inputRef = useRef(null)
 
   const handleAutoSize = () => {
@@ -20,7 +27,7 @@ const AutoExpandInput = ({ inputProps, autoSize, label, errorField }) => {
 
   useEffect(() => {
     handleAutoSize()
-  }, [inputProps.value])
+  }, [value])
 
   useEffect(() => {
     window.addEventListener('resize', onResize)
@@ -30,13 +37,15 @@ const AutoExpandInput = ({ inputProps, autoSize, label, errorField }) => {
   }, [])
 
   return (
-    <Wrapper>
+    <Wrapper className={classes.rootClass}>
       <TextInput
         {...inputProps}
         autoSize
-        className={inputProps.className}
+        className={classes.inputClass}
+        ref={inputRef}
         innerRef={inputRef}
         error={errorField}
+        value={value}
       />
       <FieldSet error={errorField} className='fieldset' />
       <Label className='label'>{label}</Label>
@@ -51,7 +60,7 @@ AutoExpandInput.propTypes = {
   label: PropTypes.string
 }
 AutoExpandInput.defaultProps = {
-  autoSize: false,
+  autoSize: true,
   errorField: false,
   label: ''
 }
