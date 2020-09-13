@@ -21,18 +21,18 @@ npm install auto-expand-input --save
 Auto-Expand-Input generates an input field, wrapped in a `<div>` tag, It will automatically expand the height of the input based the content. It will accept all the native input props along withe the specific props to this input. This input will also support floating label and effects similar to material-ui input.
 
 ```es6
-import AutoExpandInput from "auto-expand-input";
-
+import AutoExpandInput from 'auto-expand-input';
 <AutoExpandInput
-  classes={{rootClass: "", inputClass: ""}}
-  label=""
+  classes={{ rootClass: '', inputClass: '' }}
+  label='Auto expand input'
+  autoSize
+  value={value}
   inputProps={{
-    onChange,
-    value,
-    ...
-    // it will accept all the native input props here.
+    onChange: onChange,
+    rows: 1
+    // all other natives props are goes here..
   }}
-></AutoExpandInput>;
+/>
 ```
 
 ## Author
