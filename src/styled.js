@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   position: relative;
+  display: flex;
   :focus {
     outline: none;
   }
@@ -81,7 +82,7 @@ export const Label = styled.span`
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-
+  line-height: 22px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
